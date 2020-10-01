@@ -1,7 +1,7 @@
 [![alt text](https://coresolutions.ltd/media/core-solutions-82.png "Core Solutions")](https://coresolutions.ltd)
 
 [![maintained by Core Solutions](https://img.shields.io/badge/maintained%20by-coresolutions.ltd-00607c.svg)](https://coresolutions.ltd)
-[![GitHub tag](https://img.shields.io/github/v/tag/coresolutions-ltd/terraform-aws-ecs.svg?label=latest)](https://github.com/coresolutions-ltd/terraform-aws-wafv2/releases)
+[![GitHub tag](https://img.shields.io/github/v/tag/coresolutions-ltd/terraform-aws-wafv2.svg?label=latest)](https://github.com/coresolutions-ltd/terraform-aws-wafv2/releases)
 [![Terraform Version](https://img.shields.io/badge/terraform-~%3E%200.12-623ce4.svg)](https://github.com/hashicorp/terraform/releases)
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
