@@ -1,4 +1,4 @@
-module "waf" {
+module "managed_rules" {
   source = "coresolutions-ltd/wafv2/aws"
 
   default_action = "allow"

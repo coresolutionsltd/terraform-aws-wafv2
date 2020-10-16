@@ -116,7 +116,7 @@ resource "aws_wafv2_web_acl" "web_acl" {
         byte_match_statement {
           field_to_match {
             single_header {
-              name = "X-Origin-Token"
+              name = "x-origin-token"
             }
           }
           positional_constraint = "EXACTLY"
@@ -160,6 +160,41 @@ resource "aws_wafv2_web_acl" "web_acl" {
         sampled_requests_enabled   = false
       }
 
+    }
+  }
+
+  dynamic "rule" {
+    for_each = var.host_header != null ? [1] : []
+
+    content {
+      name     = "${local.name_prefix}-Detect-Host-Header"
+      priority = 95
+
+      action {
+        allow {}
+      }
+
+      statement {
+        byte_match_statement {
+          field_to_match {
+            single_header {
+              name = "host"
+            }
+          }
+          positional_constraint = "EXACTLY"
+          search_string         = var.host_header
+          text_transformation {
+            priority = 1
+            type     = "NONE"
+          }
+        }
+      }
+
+      visibility_config {
+        cloudwatch_metrics_enabled = false
+        metric_name                = "${local.name_prefix}DetectOriginToken"
+        sampled_requests_enabled   = false
+      }
     }
   }
 

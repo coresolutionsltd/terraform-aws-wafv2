@@ -41,7 +41,13 @@ variable "managed_rules" {
 
 variable "origin_token" {
   type        = string
-  description = "`X-Origin-Token` header value, requests with this header will be allowed, this is useful when restricting ALB traffic"
+  description = "`X-Origin-Token` header value, requests with this header will be allowed."
+  default     = null
+}
+
+variable "host_header" {
+  type        = string
+  description = "`Host` header value to match, requests with this host header will be allowed."
   default     = null
 }
 
